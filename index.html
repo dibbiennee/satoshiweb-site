@@ -197,6 +197,71 @@
         ::-webkit-scrollbar-thumb { background: var(--card); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+        /* --- PRICING TABLE --- */
+        .pricing-table { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+        .pt-head { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; background: var(--card); border-bottom: 1px solid var(--border); }
+        .pt-col-label { padding: 28px 32px; }
+        .pt-tier { padding: 24px 20px; border-left: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+        .pt-tier.pt-featured { background: rgba(245,166,35,0.05); border-top: 2px solid var(--accent); }
+        .pt-badge { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; background: var(--accent); color: #000; padding: 3px 8px; border-radius: 20px; font-weight: 700; align-self: flex-start; }
+        .pt-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; }
+        .pt-price { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 700; line-height: 1; }
+        .pt-tier.pt-featured .pt-price { color: var(--accent); }
+        .pt-price small { font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-muted); font-weight: 400; margin-left: 2px; }
+        .pt-row { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; border-bottom: 1px solid var(--border); }
+        .pt-row-no { background: rgba(255,255,255,0.02); }
+        .pt-feat { padding: 16px 32px; font-size: 0.9rem; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+        .pt-feat small { font-size: 0.72rem; color: var(--text-muted); }
+        .pt-feat-no { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #555; font-family: var(--font-mono); }
+        .pt-val { padding: 16px 20px; border-left: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--text); }
+        .pt-val.pt-featured-col { background: rgba(245,166,35,0.03); }
+        .pt-val-no { color: #444; font-family: var(--font-mono); font-size: 0.72rem; text-align: center; }
+        .pt-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.8rem; }
+        .pt-check.on { background: rgba(39,201,63,0.12); border-color: rgba(39,201,63,0.35); color: #27c93f; }
+        .pt-footer { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; background: var(--card); border-top: 1px solid var(--border); }
+        .pt-footer-note { padding: 20px 32px; font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; line-height: 1.5; }
+        .pt-btn { margin: 16px 12px; padding: 10px 0; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-align: center; border: 1px solid var(--border); color: var(--text); background: transparent; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .pt-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .pt-btn.pt-btn-primary { background: var(--accent); border-color: var(--accent); color: #000; }
+        .pt-btn.pt-btn-primary:hover { background: transparent; color: var(--accent); }
+        @media (max-width: 768px) {
+          .pricing-table { display: none; }
+        }
+        /* Mobile pricing cards */
+        .pricing-cards { display: none; flex-direction: column; gap: 16px; }
+        .pc-card { background: var(--card); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; }
+        .pc-card.pc-featured { border-color: var(--accent); }
+        .pc-head { padding: 20px 20px 16px; border-bottom: 1px solid var(--border); }
+        .pc-card.pc-featured .pc-head { background: rgba(245,166,35,0.05); }
+        .pc-badge { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; background: var(--accent); color: #000; padding: 3px 8px; border-radius: 20px; font-weight: 700; display: inline-block; margin-bottom: 8px; }
+        .pc-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; }
+        .pc-price { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--text); margin-top: 4px; line-height: 1; }
+        .pc-card.pc-featured .pc-price { color: var(--accent); }
+        .pc-price small { font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
+        .pc-features { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+        .pc-feat { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+        .pc-feat .pt-check { flex-shrink: 0; }
+        .pc-footer { padding: 0 20px 20px; }
+        .pc-btn { display: block; width: 100%; padding: 12px 0; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-align: center; border: 1px solid var(--border); color: var(--text); background: transparent; text-decoration: none; }
+        .pc-btn.pc-btn-primary { background: var(--accent); border-color: var(--accent); color: #000; }
+        @media (max-width: 768px) {
+          .pricing-cards { display: flex; }
+        }
+
+        /* --- LANG TOGGLE --- */
+        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .lang-toggle { display: flex; align-items: center; gap: 2px; }
+        .lang-btn {
+            background: none; border: none;
+            color: var(--text-muted); font-family: var(--font-mono);
+            font-size: 0.65rem; letter-spacing: 0.12em;
+            cursor: pointer; padding: 4px 6px;
+            transition: color 0.2s; line-height: 1;
+        }
+        .lang-btn.active { color: var(--accent); }
+        .lang-btn:hover:not(.active) { color: var(--text); }
+        .lang-sep { color: rgba(240,237,230,0.15); font-size: 0.6rem; pointer-events: none; }
+
         /* --- NAVBAR --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1003;
@@ -337,12 +402,23 @@
 
         /* --- HERO CLIENTS (inside hero, below CTA) --- */
         .hero-clients {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
             align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
+            gap: 0.75rem;
             margin-top: 1.5rem;
-            flex-wrap: wrap;
+        }
+        .hero-clients > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 44px;
+        }
+        .hero-clients img.client-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
         }
 
         /* --- CLIENTS BAR --- */
@@ -356,12 +432,17 @@
             flex-wrap: wrap;
         }
         .client-logo {
-            height: 48px;
+            max-height: 48px;
+            max-width: 100%;
             width: auto;
+            object-fit: contain;
             opacity: 0.6;
             transition: opacity 0.2s;
         }
         .client-logo:hover { opacity: 1; }
+        .client-logo-invert { filter: brightness(0) invert(1); }
+        .client-logo-text { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; opacity: 0.45; color: var(--text); letter-spacing: 0.05em; transition: opacity 0.2s; line-height: 44px; }
+        .client-logo-text:hover { opacity: 1; }
         .clients-tagline {
             text-align: center;
             color: var(--text-muted);
@@ -943,7 +1024,7 @@
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.4s ease;
         }
-        .faq-item.open .faq-answer { max-height: 200px; }
+        .faq-item.open .faq-answer { max-height: 600px; }
         .faq-answer p {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -1172,6 +1253,7 @@
         }
         @media (max-width: 768px) {
             .container { padding: 0 1.25rem; }
+            .hero { min-height: auto; }
             .circuit-grid, .floating-nodes { display: none; }
             .circuit-divider { width: 85%; }
             .cta-glow-ring { display: none; }
@@ -1189,12 +1271,19 @@
         }
         @media (max-width: 640px) {
             .container { padding: 0 1rem; }
-            .hero.container { padding: 7rem 1rem 4rem; }
+            .hero.container { padding: 7rem 1rem 4rem; min-height: auto; }
+            .hero-clients { grid-template-columns: repeat(3, 1fr); gap: 1rem 0.5rem; }
+            .hero-clients > * { height: 40px; }
             .pricing-grid, .contact-form { grid-template-columns: 1fr; }
-            .settori-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+            .settori-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+            .settore-chip { flex-direction: row; align-items: center; padding: 1rem 1.25rem; }
             .services-grid { grid-template-columns: 1fr; gap: 0.75rem; }
             .service-card-ai { grid-template-columns: 1fr; gap: 1.25rem; }
-            .process-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .process-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+            .process-step { display: flex; flex-direction: row; align-items: flex-start; gap: 1rem; background: var(--card); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border); }
+            .process-step span { font-size: 2rem; min-width: 2.5rem; margin-bottom: 0; line-height: 1.1; }
+            .process-step h5 { margin-bottom: 0.25rem; font-size: 1.1rem; }
+            .process-step p { font-size: 0.85rem; }
             .full-width { grid-column: span 1; }
             .section-header h2 { font-size: 2.2rem; }
             .hero h1 { font-size: 2.5rem; }
@@ -1347,13 +1436,15 @@
             nav { padding: 1rem 0; }
         }
         @media (max-width: 400px) {
-            .container { padding: 0 0.85rem; }
-            .hero.container { padding: 7rem 0.85rem 4rem; }
+            .container { padding: 0 1.25rem; }
+            .hero.container { padding: 7rem 1.25rem 4rem; min-height: auto; }
             .hero h1 { font-size: 2.2rem; }
             .section-header h2 { font-size: 1.8rem; }
             .contact-cta h2 { font-size: 1.5rem !important; }
             .project-card { width: 88%; min-width: 88%; max-width: 88%; }
             .contact-cta { padding: 1.5rem 1rem; }
+            .settori-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1366,27 +1457,34 @@
                 <span>Satoshi Web</span>
             </a>
             <div class="nav-links">
-                <a href="#nicchie">Settori</a>
-                <a href="#progetti">Progetti</a>
-                <a href="#servizi">Servizi</a>
-                <a href="#contatti" class="btn-pill">Parliamone</a>
+                <a href="#nicchie" data-i18n="nav_settori">Settori</a>
+                <a href="#progetti" data-i18n="nav_progetti">Progetti</a>
+                <a href="#servizi" data-i18n="nav_servizi">Servizi</a>
+                <a href="#contatti" class="btn-pill" data-i18n="nav_cta">Parliamone</a>
             </div>
-            <div class="hamburger" id="hamburger" role="button" aria-expanded="false" aria-label="Apri menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="it" onclick="setLang('it')">IT</button>
+                    <span class="lang-sep">|</span>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+                </div>
+                <div class="hamburger" id="hamburger" role="button" aria-expanded="false" aria-label="Apri menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-        <p class="mobile-menu-label">// Menu</p>
-        <a href="#nicchie">Settori</a>
-        <a href="#processo">Come lavoriamo</a>
-        <a href="#progetti">Progetti</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contatti">Parliamone →</a>
+        <p class="mobile-menu-label" data-i18n="nav_mob_label">// Menu</p>
+        <a href="#nicchie" data-i18n="nav_settori">Settori</a>
+        <a href="#processo" data-i18n="nav_mob_processo">Come lavoriamo</a>
+        <a href="#progetti" data-i18n="nav_progetti">Progetti</a>
+        <a href="#servizi" data-i18n="nav_servizi">Servizi</a>
+        <a href="#faq" data-i18n="nav_mob_faq">FAQ</a>
+        <a href="#contatti" data-i18n="nav_mob_cta">Parliamone →</a>
     </div>
 
     <main>
@@ -1442,55 +1540,21 @@
             </svg>
 
             <div>
-                <h1 class="serif reveal stagger-2">Nel 2026 chi non ha un sito web <i>non esiste.</i></h1>
-                <p class="reveal stagger-3">I tuoi clienti ti cercano online prima di chiamarti. Se non ti trovano, trovano il&nbsp;concorrente. Costruiamo siti su misura: funzioni, automazioni e integrazioni pensate per il tuo obiettivo.</p>
-
-                <div class="ai-typing-demo reveal stagger-3">
-                    <div class="typing-window">
-                        <div class="typing-header">
-                            <span class="typing-dot-green"></span>
-                            <span class="typing-label">AI Assistant · Live</span>
-                        </div>
-                        <div class="typing-body">
-                            <span id="typing-text"></span><span class="typing-cursor">|</span>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="serif reveal stagger-2" data-i18n-html="hero_h1">Smetti di essere <i>invisibile online.</i></h1>
+                <p class="reveal stagger-3" data-i18n="hero_sub">Non solo siti web. Costruiamo il sistema digitale della tua attività: automazioni, AI e strumenti su misura per fare di più, con meno sforzo.</p>
 
                 <div class="hero-btns reveal stagger-3">
-                    <a href="#progetti" class="btn-pill" style="text-decoration: none;">Vedi i nostri lavori →</a>
-                    <a href="#contatti" class="btn-outline">Parliamone</a>
+                    <a href="#contatti" class="btn-pill" style="text-decoration: none;" data-i18n="hero_cta">Prenota una chiamata — 3 minuti →</a>
+                    <a href="#progetti" class="btn-outline" data-i18n="hero_work">Vedi i lavori</a>
                 </div>
 
                 <div class="hero-clients reveal stagger-3">
                     <img src="projects/lazzi/logo.png" alt="Lazzi Barbershop" class="client-logo">
                     <img src="projects/ikta/logo.png" alt="IKTA World" class="client-logo">
-                    <svg class="client-logo client-logo-nocchia" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:42px;width:auto;">
-                        <!-- E -->
-                        <text x="8" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="url(#gold)" letter-spacing="-2">E</text>
-                        <!-- N -->
-                        <text x="48" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="url(#gold)" letter-spacing="-2">N</text>
-                        <!-- Grape cluster (top right of N) -->
-                        <g transform="translate(96, 2) rotate(15)">
-                            <circle cx="4" cy="10" r="3" fill="url(#gold)"/>
-                            <circle cx="10" cy="10" r="3" fill="url(#gold)"/>
-                            <circle cx="7" cy="5" r="3" fill="url(#gold)"/>
-                            <circle cx="7" cy="15" r="3" fill="url(#gold)"/>
-                            <circle cx="1" cy="15" r="2.5" fill="url(#gold)"/>
-                            <circle cx="13" cy="15" r="2.5" fill="url(#gold)"/>
-                            <!-- Stem -->
-                            <path d="M7 2 Q10 -3 14 -5" stroke="url(#gold)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                            <!-- Leaf -->
-                            <path d="M14 -5 Q18 -9 15 -13 Q11 -9 14 -5Z" fill="url(#gold)" opacity="0.9"/>
-                        </g>
-                        <defs>
-                            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#c9a84c"/>
-                                <stop offset="50%" stop-color="#f0d080"/>
-                                <stop offset="100%" stop-color="#b8893a"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <img src="projects/unicauto/logo.png" alt="Unicauto CZ" class="client-logo">
+                    <img src="projects/nocchia/logo.png" alt="Nocchia" class="client-logo">
+                    <img src="paradise/img/paradise-logo.png" alt="Paradise" class="client-logo client-logo-invert">
+                    <span class="client-logo-text">Antitesi</span>
                 </div>
             </div>
         </section>
@@ -1510,7 +1574,7 @@
 
         <section class="clients">
             <div class="container">
-                <p class="clients-tagline">Già scelti da attività locali, federazioni internazionali e realtà istituzionali. Da&nbsp;Civitavecchia e oltre.</p>
+                <p class="clients-tagline" data-i18n="clients_tagline">Già scelti da attività locali, federazioni internazionali e realtà istituzionali. Da&nbsp;Civitavecchia e oltre.</p>
             </div>
         </section>
 
@@ -1528,51 +1592,51 @@
 
         <section id="nicchie" class="section-padding container">
             <div class="section-header reveal">
-                <p class="mono">// Settori</p>
-                <h2 class="serif">Soluzioni diverse per ogni settore.</h2>
-                <p class="section-sub">Ogni attività ha esigenze diverse. Costruiamo in base a quello che serve davvero, non su un template standard.</p>
+                <p class="mono" data-i18n="nicchie_mono">// Settori</p>
+                <h2 class="serif" data-i18n="nicchie_h2">Soluzioni diverse per ogni settore.</h2>
+                <p class="section-sub" data-i18n="nicchie_sub">Ogni attività ha esigenze diverse. Costruiamo in base a quello che serve davvero, non su un template standard.</p>
             </div>
             <div class="settori-grid">
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M16 4C10 4 6 8 6 14V20L4 24H28L26 20V14C26 8 22 4 16 4Z" stroke="#F5A623" stroke-width="1.5"/><circle cx="16" cy="14" r="4" stroke="#F5A623" stroke-width="1.5"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M10 8C10 8 8 10 8 14C8 18 10 20 10 20" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/><path d="M22 8C22 8 24 10 24 14C24 18 22 20 22 20" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="14" r="4" stroke="#F5A623" stroke-width="1.5"/><path d="M14 20V26M18 20V26" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Studi medici</h4>
-                        <p>Prenotazioni H24, zero telefonate perse</p>
+                        <h4 data-i18n="nicchie_1_h">Barbieri & Beauty</h4>
+                        <p data-i18n="nicchie_1_p">Prenotazioni self-service, zero WhatsApp a tutte le ore</p>
                     </div>
                 </div>
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="16" rx="2" stroke="#F5A623" stroke-width="1.5"/><path d="M6 14H26" stroke="#F5A623" stroke-width="1"/><circle cx="16" cy="20" r="2" fill="#F5A623"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M6 12H26V24C26 25.1 25.1 26 24 26H8C6.9 26 6 25.1 6 24V12Z" stroke="#F5A623" stroke-width="1.5"/><path d="M4 8H28L26 12H6L4 8Z" stroke="#F5A623" stroke-width="1.5"/><path d="M14 18H18" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Beauty & wellness</h4>
-                        <p>Lista d'attesa automatica, promemoria WhatsApp</p>
+                        <h4 data-i18n="nicchie_2_h">Ristoranti & Bar</h4>
+                        <p data-i18n="nicchie_2_p">Menu aggiornabile, prenotazioni tavoli, AI risponde alle FAQ</p>
                     </div>
                 </div>
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="6" stroke="#F5A623" stroke-width="1.5"/><path d="M10 28V24C10 21 12.7 18 16 18C19.3 18 22 21 22 24V28" stroke="#F5A623" stroke-width="1.5"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="2" stroke="#F5A623" stroke-width="1.5"/><path d="M10 10V7C10 5.3 12.7 4 16 4C19.3 4 22 5.3 22 7V10" stroke="#F5A623" stroke-width="1.5"/><circle cx="16" cy="19" r="3" stroke="#F5A623" stroke-width="1.5"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Personal trainer</h4>
-                        <p>Piani e risposte via chat, pagamenti integrati</p>
+                        <h4 data-i18n="nicchie_3_h">Hotel & Hospitality</h4>
+                        <p data-i18n="nicchie_3_p">Prenotazioni dirette, meno commissioni Booking</p>
                     </div>
                 </div>
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="4" y="14" width="24" height="10" rx="3" stroke="#F5A623" stroke-width="1.5"/><circle cx="10" cy="24" r="3" stroke="#F5A623" stroke-width="1.5"/><circle cx="22" cy="24" r="3" stroke="#F5A623" stroke-width="1.5"/><path d="M6 14L10 6H22L26 14" stroke="#F5A623" stroke-width="1.5"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M16 4C16 4 8 8 8 16C8 20.4 11.6 24 16 24C20.4 24 24 20.4 24 16C24 8 16 4 16 4Z" stroke="#F5A623" stroke-width="1.5"/><path d="M16 12V18M13 15H19" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Noleggio luxury</h4>
-                        <p>Disponibilità in tempo reale, preventivo istantaneo</p>
+                        <h4 data-i18n="nicchie_4_h">Salute & Benessere</h4>
+                        <p data-i18n="nicchie_4_p">Prima visita qualificata dall'AI, agenda sempre piena</p>
                     </div>
                 </div>
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M4 22L16 28L28 22" stroke="#F5A623" stroke-width="1.5"/><path d="M4 22V14L16 8L28 14V22" stroke="#F5A623" stroke-width="1.5"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#F5A623" stroke-width="1.5"/><path d="M12 14L16 10L20 14" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 10V22" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Yacht & charter</h4>
-                        <p>Richieste charter gestite dall'AI, booking online</p>
+                        <h4 data-i18n="nicchie_5_h">Locali & Eventi</h4>
+                        <p data-i18n="nicchie_5_p">Biglietteria, prenotazioni tavoli, gestione ingressi QR</p>
                     </div>
                 </div>
                 <div class="settore-chip reveal">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect x="8" y="4" width="16" height="24" rx="2" stroke="#F5A623" stroke-width="1.5"/><line x1="12" y1="10" x2="20" y2="10" stroke="#F5A623" stroke-width="1" opacity="0.5"/><line x1="12" y1="14" x2="18" y2="14" stroke="#F5A623" stroke-width="1" opacity="0.5"/><circle cx="16" cy="24" r="2" stroke="#F5A623" stroke-width="1.5"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" stroke="#F5A623" stroke-width="1.5"/><path d="M8 28C8 23.6 11.6 20 16 20C20.4 20 24 23.6 24 28" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/><path d="M22 6L26 4M10 6L6 4" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <div class="settore-chip-text">
-                        <h4>Avvocati</h4>
-                        <p>Prima consulenza qualificata dall'AI, non dalla segreteria</p>
+                        <h4 data-i18n="nicchie_6_h">Creator & Artisti</h4>
+                        <p data-i18n="nicchie_6_p">Sito + press kit digitale + link-in-bio per DJ, musicisti, fotografi</p>
                     </div>
                 </div>
             </div>
@@ -1590,29 +1654,29 @@
                 <line x1="20" y1="75" x2="100" y2="85" stroke="#F5A623" stroke-width="0.8" opacity="0.05"/>
             </svg>
             <div class="section-header reveal">
-                <p class="mono">// Come lavoriamo</p>
-                <h2 class="serif">Come funziona, passo per passo</h2>
+                <p class="mono" data-i18n="proc_mono">// Come lavoriamo</p>
+                <h2 class="serif" data-i18n="proc_h2">Come funziona, passo per passo</h2>
             </div>
             <div class="process-grid">
                 <div class="process-step reveal stagger-1">
                     <span class="serif">01</span>
-                    <h5>Ascolto</h5>
-                    <p>Ci racconti cosa fai e qual è il tuo obiettivo. Capiamo insieme la soluzione giusta per te.</p>
+                    <h5 data-i18n="proc_1_h">Ascolto</h5>
+                    <p data-i18n="proc_1_p">Ci racconti cosa fai e qual è il tuo obiettivo. Capiamo insieme la soluzione giusta per te.</p>
                 </div>
                 <div class="process-step reveal stagger-2">
                     <span class="serif">02</span>
-                    <h5>Proposta</h5>
-                    <p>Preventivo dettagliato con costi e tempistiche. Niente sorprese.</p>
+                    <h5 data-i18n="proc_2_h">Proposta</h5>
+                    <p data-i18n="proc_2_p">Preventivo dettagliato con costi e tempistiche. Niente sorprese.</p>
                 </div>
                 <div class="process-step reveal stagger-3">
                     <span class="serif">03</span>
-                    <h5>Sviluppo</h5>
-                    <p>Lavoriamo e ti teniamo aggiornato. Il risultato è qualcosa di tuo, costruito su&nbsp;misura.</p>
+                    <h5 data-i18n="proc_3_h">Sviluppo</h5>
+                    <p data-i18n="proc_3_p">Lavoriamo e ti teniamo aggiornato. Il risultato è qualcosa di tuo, costruito su&nbsp;misura.</p>
                 </div>
                 <div class="process-step reveal stagger-4">
                     <span class="serif">04</span>
-                    <h5>Lancio</h5>
-                    <p>Ultimi test, poi lancio online del tuo sito. Dal primo giorno funziona.</p>
+                    <h5 data-i18n="proc_4_h">Lancio</h5>
+                    <p data-i18n="proc_4_p">Ultimi test, poi lancio online del tuo sito. Dal primo giorno funziona.</p>
                 </div>
             </div>
         </section>
@@ -1629,69 +1693,12 @@
 
         <section id="progetti" class="section-padding container">
             <div class="section-header reveal">
-                <p class="mono">// Progetti</p>
-                <h2 class="serif">Lavori recenti</h2>
-                <p class="section-sub">Ogni progetto è un problema reale risolto. Guarda cosa abbiamo costruito.</p>
+                <p class="mono" data-i18n="proj_mono">// Progetti</p>
+                <h2 class="serif" data-i18n="proj_h2">Lavori recenti</h2>
+                <p class="section-sub" data-i18n="proj_sub">Ogni progetto è un problema reale risolto. Guarda cosa abbiamo costruito.</p>
             </div>
 
             <div class="projects-scroll">
-            <!-- Progetto 0: Wine AI Tool — Card speciale AI -->
-            <div class="project-card project-ai reveal">
-                <div class="project-ai-visual">
-                    <div class="wine-phone-scene">
-                        <div class="demo-phone">
-                            <div class="demo-phone-notch"></div>
-                            <div class="demo-phone-home"></div>
-                            <div class="demo-screen">
-                                <!-- Viewfinder: bottle + scan beam -->
-                                <div class="demo-viewfinder">
-                                    <span class="demo-corner tl"></span>
-                                    <span class="demo-corner tr"></span>
-                                    <span class="demo-corner bl"></span>
-                                    <span class="demo-corner br"></span>
-                                    <svg width="38" height="116" viewBox="0 0 34 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="12" y="0" width="10" height="8" rx="2" fill="rgba(245,166,35,0.3)" stroke="#F5A623" stroke-width="1"/>
-                                        <path d="M12 8 L22 8 L22 33 C27 39 29 46 29 52 L29 80 C29 86 23 89 17 89 C11 89 5 86 5 80 L5 52 C5 46 7 39 12 33 Z" fill="rgba(245,166,35,0.07)" stroke="#F5A623" stroke-width="1.2"/>
-                                        <rect x="7" y="57" width="20" height="18" rx="1.5" fill="rgba(245,166,35,0.1)" stroke="rgba(245,166,35,0.3)" stroke-width="0.7"/>
-                                        <line x1="10" y1="63" x2="24" y2="63" stroke="#F5A623" stroke-width="0.6" opacity="0.5"/>
-                                        <line x1="11" y1="68" x2="23" y2="68" stroke="#F5A623" stroke-width="0.5" opacity="0.35"/>
-                                        <line x1="10" y1="72" x2="24" y2="72" stroke="#F5A623" stroke-width="0.6" opacity="0.5"/>
-                                        <path d="M10 87 Q17 84 24 87" stroke="#F5A623" stroke-width="0.7" fill="none" opacity="0.4"/>
-                                    </svg>
-                                    <div class="demo-beam"></div>
-                                </div>
-                                <!-- AI result overlay -->
-                                <div class="demo-result-overlay">
-                                    <div class="demo-result-row">
-                                        <span class="demo-ai-badge">AI</span>
-                                        <span class="demo-wine-name">Dom Pérignon 2013</span>
-                                    </div>
-                                    <div class="demo-confidence-row">
-                                        <div class="demo-confidence-bar-wrap"><div class="demo-confidence-fill"></div></div>
-                                        <span class="demo-confidence-label">94% match</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info" style="text-align:center; align-items:center;">
-                    <span class="project-ai-label">TOOL AI</span>
-                    <p class="mono">INTELLIGENZA ARTIFICIALE + ENOTECA</p>
-                    <h3 class="serif">Riconoscimento Vini AI</h3>
-                    <p class="project-desc">Tool di riconoscimento vini con AI integrata per un'enoteca locale. Il cliente fotografa la bottiglia, l'AI identifica il vino, fornisce scheda tecnica, storia e abbinamenti gastronomici in tempo reale.</p>
-                    <div class="tech-tags">
-                        <span class="tag">AI Vision</span>
-                        <span class="tag">Claude API</span>
-                        <span class="tag">Tool custom</span>
-                        <span class="tag">Mobile-first</span>
-                    </div>
-                    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-top:0.5rem;">
-                        <button onclick="openModal('nocchia-modal')" class="project-link" style="background:none;border:none;cursor:pointer;padding:0;font-family:inherit;font-size:inherit;color:var(--accent);">Dettagli progetto <span class="arrow">→</span></button>
-                    </div>
-                </div>
-            </div>
-
             <!-- Progetto 1: Lazzi — Mockup SINISTRA, Info DESTRA -->
             <div class="project-card reveal">
                 <div class="mockup-group">
@@ -1724,14 +1731,14 @@
                     <img src="projects/lazzi/logo.png" alt="Lazzi Barbershop Logo" class="project-logo" loading="lazy">
                     <p class="mono">SITO WEB + E-COMMERCE</p>
                     <h3 class="serif">Lazzi Barbershop</h3>
-                    <p class="project-desc">Sito premium con e-commerce e pagamenti Stripe</p>
+                    <p class="project-desc" data-i18n="proj_lazzi_desc">Sito premium con e-commerce e pagamenti Stripe</p>
                     <div class="tech-tags">
                         <span class="tag">HTML/CSS/JS</span>
                         <span class="tag">E-Commerce</span>
                         <span class="tag">Stripe</span>
                         <span class="tag">Responsive</span>
                     </div>
-                    <a href="https://lazzibarbershop.it" target="_blank" rel="noopener" class="project-link">Visita il sito <span class="arrow">→</span></a>
+                    <a href="https://lazzibarbershop.it" target="_blank" rel="noopener" class="project-link"><span data-i18n="proj_visit">Visita il sito</span> <span class="arrow">→</span></a>
                 </div>
             </div>
 
@@ -1767,14 +1774,14 @@
                     <img src="projects/ikta/logo.png" alt="IKTA World Logo" class="project-logo" loading="lazy">
                     <p class="mono">PIATTAFORMA WEB ISTITUZIONALE</p>
                     <h3 class="serif">IKTA World</h3>
-                    <p class="project-desc">Federazione internazionale di sport da combattimento. Sito istituzionale multilingua per atleti e affiliati in&nbsp;30&nbsp;paesi.</p>
+                    <p class="project-desc" data-i18n="proj_ikta_desc">Federazione internazionale di sport da combattimento. Sito istituzionale multilingua per atleti e affiliati in&nbsp;30&nbsp;paesi.</p>
                     <div class="tech-tags">
                         <span class="tag">HTML/CSS/JS</span>
                         <span class="tag">Multi-lingua</span>
                         <span class="tag">Responsive</span>
                         <span class="tag">SEO</span>
                     </div>
-                    <a href="https://iktaworld.com" target="_blank" rel="noopener" class="project-link">Visita il sito <span class="arrow">→</span></a>
+                    <a href="https://iktaworld.com" target="_blank" rel="noopener" class="project-link"><span data-i18n="proj_visit">Visita il sito</span> <span class="arrow">→</span></a>
                 </div>
             </div>
 
@@ -1810,19 +1817,163 @@
                     <img src="projects/unicauto/logo.png" alt="UniCauto CZ Logo" class="project-logo" loading="lazy" style="filter: brightness(0) invert(1); opacity: 0.85;">
                     <p class="mono">NOLEGGIO AUTO SPORTIVE</p>
                     <h3 class="serif">UniCauto CZ</h3>
-                    <p class="project-desc">Noleggio supercar e auto sportive premium. Catalogo vetture, prenotazione online e&nbsp;AI&nbsp;Advisor per scegliere l'auto giusta.</p>
+                    <p class="project-desc" data-i18n="proj_unicauto_desc">Noleggio supercar e auto sportive premium. Catalogo vetture, prenotazione online e&nbsp;AI&nbsp;Advisor per scegliere l'auto giusta.</p>
                     <div class="tech-tags">
                         <span class="tag">Design premium</span>
                         <span class="tag">AI Advisor</span>
                         <span class="tag">Booking</span>
                         <span class="tag">Multilingua</span>
                     </div>
-                    <a href="https://unicautocz.vercel.app" target="_blank" rel="noopener" class="project-link">Visita il sito <span class="arrow">→</span></a>
+                    <a href="https://unicautocz.vercel.app" target="_blank" rel="noopener" class="project-link"><span data-i18n="proj_visit">Visita il sito</span> <span class="arrow">→</span></a>
                 </div>
             </div>
+
+            <!-- Progetto 4: Antitesi — Mockup DESTRA, Info SINISTRA -->
+            <div class="project-card reversed reveal">
+                <div class="mockup-group">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="laptop-webcam"></div>
+                            <div class="laptop-topbar">
+                                <div class="dot-red"></div>
+                                <div class="dot-yellow"></div>
+                                <div class="dot-green"></div>
+                                <span class="url-bar">antitesi.link</span>
+                            </div>
+                            <div class="laptop-screenshot">
+                                <img src="projects/antitesi/desktop.jpg" alt="Antitesi Desktop" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screenshot">
+                                <img src="projects/antitesi/mobile.jpg" alt="Antitesi Mobile" loading="lazy">
+                            </div>
+                            <div class="phone-home-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info" style="text-align:center; align-items:center;">
+                    <p class="mono">DJ &amp; PRODUCER · ROMA</p>
+                    <h3 class="serif">Antitesi</h3>
+                    <p class="project-desc" data-i18n="proj_antitesi_desc">Landing page per DJ e producer romano. Biografia, date eventi, set mix in streaming e contatti per booking. Design dark, animazioni fluide, mobile-first.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Landing page</span>
+                        <span class="tag">Musica</span>
+                        <span class="tag">Booking</span>
+                        <span class="tag">Mobile-first</span>
+                    </div>
+                    <a href="https://antitesi.link" target="_blank" rel="noopener" class="project-link"><span data-i18n="proj_visit">Visita il sito</span> <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <!-- Progetto 5: Paradise — Menu digitale -->
+            <div class="project-card reveal">
+                <div class="mockup-group">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="laptop-webcam"></div>
+                            <div class="laptop-topbar">
+                                <div class="dot-red"></div>
+                                <div class="dot-yellow"></div>
+                                <div class="dot-green"></div>
+                                <span class="url-bar">paradise-iota-six.vercel.app</span>
+                            </div>
+                            <div class="laptop-screenshot">
+                                <img src="paradise/img/desktop.jpg" alt="Paradise Desktop" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screenshot">
+                                <img src="paradise/img/mobile.jpg" alt="Paradise Mobile" loading="lazy">
+                            </div>
+                            <div class="phone-home-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info" style="text-align:center; align-items:center;">
+                    <p class="mono">BEACH CLUB · CIVITAVECCHIA</p>
+                    <h3 class="serif">Paradise</h3>
+                    <p class="project-desc" data-i18n="proj_paradise_desc">App web per menu digitale e gestione tavoli. Scansioni il QR, scegli il tavolo e vedi il menu spirits in tempo reale. Con un tap puoi chiamare il cameriere direttamente dal telefono.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Menu digitale</span>
+                        <span class="tag">QR Code</span>
+                        <span class="tag">Chiamata cameriere</span>
+                        <span class="tag">No-app</span>
+                    </div>
+                    <a href="https://paradise-iota-six.vercel.app" target="_blank" rel="noopener" class="project-link"><span data-i18n="proj_visit">Visita il sito</span> <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <!-- Progetto 6: Riconoscimento Vini AI — Card speciale AI -->
+            <div class="project-card project-ai reveal">
+                <div class="project-ai-visual">
+                    <div class="wine-phone-scene">
+                        <div class="demo-phone">
+                            <div class="demo-phone-notch"></div>
+                            <div class="demo-phone-home"></div>
+                            <div class="demo-screen">
+                                <div class="demo-viewfinder">
+                                    <span class="demo-corner tl"></span>
+                                    <span class="demo-corner tr"></span>
+                                    <span class="demo-corner bl"></span>
+                                    <span class="demo-corner br"></span>
+                                    <svg width="38" height="116" viewBox="0 0 34 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="12" y="0" width="10" height="8" rx="2" fill="rgba(245,166,35,0.3)" stroke="#F5A623" stroke-width="1"/>
+                                        <path d="M12 8 L22 8 L22 33 C27 39 29 46 29 52 L29 80 C29 86 23 89 17 89 C11 89 5 86 5 80 L5 52 C5 46 7 39 12 33 Z" fill="rgba(245,166,35,0.07)" stroke="#F5A623" stroke-width="1.2"/>
+                                        <rect x="7" y="57" width="20" height="18" rx="1.5" fill="rgba(245,166,35,0.1)" stroke="rgba(245,166,35,0.3)" stroke-width="0.7"/>
+                                        <line x1="10" y1="63" x2="24" y2="63" stroke="#F5A623" stroke-width="0.6" opacity="0.5"/>
+                                        <line x1="11" y1="68" x2="23" y2="68" stroke="#F5A623" stroke-width="0.5" opacity="0.35"/>
+                                        <line x1="10" y1="72" x2="24" y2="72" stroke="#F5A623" stroke-width="0.6" opacity="0.5"/>
+                                        <path d="M10 87 Q17 84 24 87" stroke="#F5A623" stroke-width="0.7" fill="none" opacity="0.4"/>
+                                    </svg>
+                                    <div class="demo-beam"></div>
+                                </div>
+                                <div class="demo-result-overlay">
+                                    <div class="demo-result-row">
+                                        <span class="demo-ai-badge">AI</span>
+                                        <span class="demo-wine-name">Dom Pérignon 2013</span>
+                                    </div>
+                                    <div class="demo-confidence-row">
+                                        <div class="demo-confidence-bar-wrap"><div class="demo-confidence-fill"></div></div>
+                                        <span class="demo-confidence-label">94% match</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info" style="text-align:center; align-items:center;">
+                    <div style="margin-bottom:1rem; text-align:center; line-height:1.2;">
+                        <span style="font-family:var(--font-serif); font-size:1.8rem; font-weight:600; color:var(--accent); display:block; letter-spacing:0.05em;">EN</span>
+                        <span style="font-family:var(--font-sans); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); display:block;">Enoteca Nocchia</span>
+                    </div>
+                    <span class="project-ai-label">TOOL AI</span>
+                    <p class="mono" data-i18n="proj_wine_mono">INTELLIGENZA ARTIFICIALE + ENOTECA</p>
+                    <h3 class="serif" data-i18n="proj_wine_h">Riconoscimento Vini AI</h3>
+                    <p class="project-desc" data-i18n="proj_wine_desc">Tool di riconoscimento vini con AI integrata per un'enoteca locale. Il cliente fotografa la bottiglia, l'AI identifica il vino, fornisce scheda tecnica, storia e abbinamenti gastronomici in tempo reale.</p>
+                    <div class="tech-tags">
+                        <span class="tag">AI Vision</span>
+                        <span class="tag">Claude API</span>
+                        <span class="tag">Tool custom</span>
+                        <span class="tag">Mobile-first</span>
+                    </div>
+                    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-top:0.5rem;">
+                        <button onclick="openModal('nocchia-modal')" class="project-link" style="background:none;border:none;cursor:pointer;padding:0;font-family:inherit;font-size:inherit;color:var(--accent);"><span data-i18n="proj_wine_link">Dettagli progetto</span> <span class="arrow">→</span></button>
+                    </div>
+                </div>
+            </div>
+
             </div>
             <div class="scroll-hint" id="projects-hint">
-                <span class="scroll-hint-text">Scorri per vedere altri progetti</span>
+                <span class="scroll-hint-text" data-i18n="proj_scroll">Scorri per vedere altri progetti</span>
                 <span class="scroll-hint-arrow">→</span>
             </div>
         </section>
@@ -1855,8 +2006,8 @@
             </svg>
 
             <div class="section-header reveal">
-                <p class="mono">// Servizi</p>
-                <h2 class="serif">Cosa possiamo fare per il tuo business</h2>
+                <p class="mono" data-i18n="serv_mono">// Servizi</p>
+                <h2 class="serif" data-i18n="serv_h2">Cosa possiamo fare per il tuo business</h2>
             </div>
             <div class="services-grid">
                 <!-- Sito Web -->
@@ -1872,11 +2023,11 @@
                         <circle cx="5" cy="26" r="2" fill="#F5A623"/>
                         <circle cx="20" cy="32" r="2" fill="#F5A623"/>
                     </svg>
-                    <h4>Siti Web, Webapp & App</h4>
-                    <p>Landing page, siti completi, e-commerce e app&nbsp;iOS/Android. Veloci, SEO-ottimizzati, mobile-first.</p>
+                    <h4 data-i18n="serv_web_h">Siti Web, Webapp & App</h4>
+                    <p data-i18n="serv_web_p">Landing page, siti completi, e-commerce e app&nbsp;iOS/Android. Veloci, SEO-ottimizzati, mobile-first.</p>
                     <a href="https://wa.me/393341989193?text=Ciao%2C%20vorrei%20info%20su%20un%20sito%20web%20o%20app" target="_blank" rel="noopener" class="wa-link">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L0 24l6.34-1.501A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.386l-.361-.214-3.741.885.936-3.619-.236-.374A9.764 9.764 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-                        Scrivici su WhatsApp
+                        <span data-i18n="serv_wa">Scrivici su WhatsApp</span>
                     </a>
                 </div>
                 <!-- AI & Automazioni (card larga) -->
@@ -1893,28 +2044,28 @@
                                 <line x1="34" y1="15" x2="34" y2="22" stroke="#F5A623" stroke-width="1.5"/>
                                 <circle cx="34" cy="22" r="2" fill="#F5A623"/>
                             </svg>
-                            <h4>AI & Automazioni</h4>
-                            <p>Non solo siti. Costruiamo tutto quello che semplifica il lavoro della tua attività. Chatbot, automazioni, tool su misura: se si può automatizzare, lo&nbsp;facciamo.</p>
+                            <h4 data-i18n="serv_ai_h">AI & Automazioni</h4>
+                            <p data-i18n="serv_ai_p">Non solo siti. Costruiamo tutto quello che semplifica il lavoro della tua attività. Chatbot, automazioni, tool su misura: se si può automatizzare, lo&nbsp;facciamo.</p>
                             <a href="https://wa.me/393341989193?text=Ciao%2C%20vorrei%20info%20su%20AI%20e%20automazioni" target="_blank" rel="noopener" class="wa-link">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.855L0 24l6.34-1.501A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.792 9.792 0 01-5.032-1.386l-.361-.214-3.741.885.936-3.619-.236-.374A9.764 9.764 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-                                Scrivici su WhatsApp
+                                <span data-i18n="serv_wa">Scrivici su WhatsApp</span>
                             </a>
                         </div>
                         <div>
-                            <p class="mono" style="font-size:0.65rem; margin-bottom:0.75rem; opacity:0.5;">ESEMPI DI COSA POSSIAMO INTEGRARE</p>
+                            <p class="mono" data-i18n="serv_ai_ex" style="font-size:0.65rem; margin-bottom:0.75rem; opacity:0.5;">ESEMPI DI COSA POSSIAMO INTEGRARE</p>
                             <div class="service-ai-chips">
-                                <span class="service-ai-chip">Chatbot H24</span>
-                                <span class="service-ai-chip">Prenotazioni automatiche</span>
-                                <span class="service-ai-chip">WhatsApp automatico</span>
-                                <span class="service-ai-chip">Email post-acquisto</span>
-                                <span class="service-ai-chip">Qualificazione lead</span>
-                                <span class="service-ai-chip">Preventivi istantanei</span>
-                                <span class="service-ai-chip">Riconoscimento immagini</span>
-                                <span class="service-ai-chip">Analisi documenti AI</span>
-                                <span class="service-ai-chip">Google Calendar sync</span>
-                                <span class="service-ai-chip">Dashboard automatiche</span>
-                                <span class="service-ai-chip">Promemoria appuntamenti</span>
-                                <span class="service-ai-chip">Tool AI su misura</span>
+                                <span class="service-ai-chip" data-i18n="chip_chatbot">Chatbot H24</span>
+                                <span class="service-ai-chip" data-i18n="chip_bookings">Prenotazioni automatiche</span>
+                                <span class="service-ai-chip" data-i18n="chip_whatsapp">WhatsApp automatico</span>
+                                <span class="service-ai-chip" data-i18n="chip_email">Email post-acquisto</span>
+                                <span class="service-ai-chip" data-i18n="chip_leads">Qualificazione lead</span>
+                                <span class="service-ai-chip" data-i18n="chip_quotes">Preventivi istantanei</span>
+                                <span class="service-ai-chip" data-i18n="chip_vision">Riconoscimento immagini</span>
+                                <span class="service-ai-chip" data-i18n="chip_docs">Analisi documenti AI</span>
+                                <span class="service-ai-chip" data-i18n="chip_gcal">Google Calendar sync</span>
+                                <span class="service-ai-chip" data-i18n="chip_dash">Dashboard automatiche</span>
+                                <span class="service-ai-chip" data-i18n="chip_reminders">Promemoria appuntamenti</span>
+                                <span class="service-ai-chip" data-i18n="chip_custom">Tool AI su misura</span>
                             </div>
                         </div>
                     </div>
@@ -1923,14 +2074,138 @@
         </section>
 
         <section id="pacchetti" class="section-padding container">
-            <div class="reveal" style="text-align:center; max-width:580px; margin:0 auto;">
-                <p class="mono">// Prezzi</p>
-                <h2 class="serif" style="font-size:clamp(1.6rem,5vw,3.2rem); margin:0.75rem 0 1.25rem; text-wrap:balance;">I prezzi li facciamo insieme.</h2>
-                <p style="color:var(--text-muted); font-size:1.05rem; max-width:460px; margin:0 auto 2.5rem; text-wrap:balance; line-height:1.7;">Ogni progetto è diverso. Raccontami cosa hai in mente: ti rispondo entro qualche ora con una proposta concreta.</p>
-                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-                    <a href="https://wa.me/393341989193?text=Ciao%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="btn-pill" style="text-decoration:none;">Scrivimi su WhatsApp →</a>
-                    <a href="#contatti" class="btn-outline" style="text-decoration:none;">Oppure usa il form</a>
+            <div class="section-header reveal">
+                <p class="mono" data-i18n="price_mono">// Prezzi</p>
+                <h2 class="serif" data-i18n="price_h2">Scegli il tuo piano.</h2>
+                <p class="section-sub" data-i18n="price_sub">Pagamento 50% avvio + 50% go-live.</p>
+            </div>
+
+            <div class="pricing-table reveal">
+                <!-- HEADER -->
+                <div class="pt-head">
+                    <div class="pt-col-label"></div>
+                    <div class="pt-tier">
+                        <span class="pt-name" data-i18n="price_plan1">Vetrina</span>
+                        <span class="pt-price">€590<small data-i18n="price_onetm">/una tantum</small></span>
+                    </div>
+                    <div class="pt-tier pt-featured">
+                        <span class="pt-badge" data-i18n="price_badge">Più scelto</span>
+                        <span class="pt-name">Pro</span>
+                        <span class="pt-price">€1.190<small data-i18n="price_onetm">/una tantum</small></span>
+                    </div>
+                    <div class="pt-tier">
+                        <span class="pt-name">Pro+AI</span>
+                        <span class="pt-price">€1.890<small data-i18n="price_onetm">/una tantum</small></span>
+                    </div>
                 </div>
+                <!-- ROWS -->
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f1">Pagine incluse</span><small data-i18n="price_f1s">sezioni multi-contenuto, copy incluso</small></div>
+                    <div class="pt-val">1</div>
+                    <div class="pt-val pt-featured-col">5</div>
+                    <div class="pt-val">5 + blog</div>
+                </div>
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f2">Dominio + hosting</span><small data-i18n="price_f2s">primo anno incluso</small></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                    <div class="pt-val pt-featured-col"><span class="pt-check on">✓</span></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                </div>
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f3">SEO locale</span><small data-i18n="price_f3s">Google Business, schema, sitemap</small></div>
+                    <div class="pt-val"><span class="pt-check">·</span></div>
+                    <div class="pt-val pt-featured-col"><span class="pt-check on">✓</span></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                </div>
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f4">Sistema di prenotazione</span><small data-i18n="price_f4s">calendario sincronizzato + notifiche email</small></div>
+                    <div class="pt-val"><span class="pt-check">·</span></div>
+                    <div class="pt-val pt-featured-col"><span class="pt-check on">✓</span></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                </div>
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f5">Assistente AI</span><small data-i18n="price_f5s">chat sul sito + WhatsApp, risponde H24</small></div>
+                    <div class="pt-val"><span class="pt-check">·</span></div>
+                    <div class="pt-val pt-featured-col"><span class="pt-check">·</span></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                </div>
+                <div class="pt-row">
+                    <div class="pt-feat"><span data-i18n="price_f6">Pannello per modificare il sito da solo</span><small data-i18n="price_f6s">testi, foto, prezzi — senza toccare il codice</small></div>
+                    <div class="pt-val"><span class="pt-check">·</span></div>
+                    <div class="pt-val pt-featured-col"><span class="pt-check on">✓</span></div>
+                    <div class="pt-val"><span class="pt-check on">✓</span></div>
+                </div>
+                <div class="pt-row pt-row-no">
+                    <div class="pt-feat pt-feat-no" data-i18n="price_no">Non incluso</div>
+                    <div class="pt-val pt-val-no">foto · testi lunghi</div>
+                    <div class="pt-val pt-featured-col pt-val-no">e-commerce</div>
+                    <div class="pt-val pt-val-no">app native</div>
+                </div>
+                <!-- FOOTER -->
+                <div class="pt-footer">
+                    <div class="pt-footer-note" data-i18n="price_footer">Ogni progetto è diverso. Il prezzo finale si definisce insieme.</div>
+                    <a href="#contatti" class="pt-btn" data-i18n="price_btn1">Scegli Vetrina</a>
+                    <a href="#contatti" class="pt-btn pt-btn-primary" data-i18n="price_btn2">Scegli Pro</a>
+                    <a href="#contatti" class="pt-btn" data-i18n="price_btn3">Scegli Pro+AI</a>
+                </div>
+            </div>
+
+            <!-- Mobile pricing cards -->
+            <div class="pricing-cards reveal">
+
+                <!-- Vetrina -->
+                <div class="pc-card">
+                    <div class="pc-head">
+                        <div class="pc-name" data-i18n="price_plan1">Vetrina</div>
+                        <div class="pc-price">€590<small data-i18n="price_onetm"> /una tantum</small></div>
+                    </div>
+                    <div class="pc-features">
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f1_vetrina">1 pagina multi-sezione</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f2">Dominio + hosting (1° anno)</span></div>
+                        <div class="pc-feat"><span class="pt-check">·</span> <span data-i18n="mc_f3">SEO locale</span></div>
+                        <div class="pc-feat"><span class="pt-check">·</span> <span data-i18n="mc_f4">Sistema prenotazioni</span></div>
+                        <div class="pc-feat"><span class="pt-check">·</span> <span data-i18n="mc_f5">Pannello modifiche</span></div>
+                        <div class="pc-feat"><span class="pt-check">·</span> <span data-i18n="mc_f6">Assistente AI</span></div>
+                    </div>
+                    <div class="pc-footer"><a href="#contatti" class="pc-btn" data-i18n="price_btn1">Scegli Vetrina</a></div>
+                </div>
+
+                <!-- Pro -->
+                <div class="pc-card pc-featured">
+                    <div class="pc-head">
+                        <span class="pc-badge" data-i18n="price_badge">Più scelto</span>
+                        <div class="pc-name">Pro</div>
+                        <div class="pc-price">€1.190<small data-i18n="price_onetm"> /una tantum</small></div>
+                    </div>
+                    <div class="pc-features">
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f1_pro">5 pagine + copy incluso</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f2">Dominio + hosting (1° anno)</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f3">SEO locale</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f4">Sistema prenotazioni</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f5">Pannello modifiche</span></div>
+                        <div class="pc-feat"><span class="pt-check">·</span> <span data-i18n="mc_f6">Assistente AI</span></div>
+                    </div>
+                    <div class="pc-footer"><a href="#contatti" class="pc-btn pc-btn-primary" data-i18n="price_btn2">Scegli Pro</a></div>
+                </div>
+
+                <!-- Pro+AI -->
+                <div class="pc-card">
+                    <div class="pc-head">
+                        <div class="pc-name">Pro+AI</div>
+                        <div class="pc-price">€1.890<small data-i18n="price_onetm"> /una tantum</small></div>
+                    </div>
+                    <div class="pc-features">
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f1_proai">5 pagine + blog</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f2">Dominio + hosting (1° anno)</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f3">SEO locale</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f4">Sistema prenotazioni</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f5">Pannello modifiche</span></div>
+                        <div class="pc-feat"><span class="pt-check on">✓</span> <span data-i18n="mc_f6_proai">Assistente AI (chat + WhatsApp)</span></div>
+                    </div>
+                    <div class="pc-footer"><a href="#contatti" class="pc-btn" data-i18n="price_btn3">Scegli Pro+AI</a></div>
+                </div>
+
+                <p style="font-size:0.78rem; color: var(--text-muted); text-align:center; line-height:1.5;" data-i18n="price_sub">Pagamento 50% avvio + 50% go-live.</p>
             </div>
         </section>
 
@@ -1948,80 +2223,80 @@
 
         <section id="faq" class="section-padding container">
             <div class="section-header reveal">
-                <p class="mono">// Domande frequenti</p>
-                <h2 class="serif">Hai qualche dubbio?</h2>
+                <p class="mono" data-i18n="faq_mono">// Domande frequenti</p>
+                <h2 class="serif" data-i18n="faq_h2">Hai qualche dubbio?</h2>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Quanto costa davvero?</h4>
+                        <h4 data-i18n="faq_1q">Quanto costa davvero?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Dipende dal progetto: una landing page parte da 400€, un sito completo da&nbsp;800€. Il preventivo è concordato prima di iniziare. Paghi metà alla firma, metà alla consegna.</p>
+                        <p data-i18n="faq_1a">Dipende dal progetto: una landing page parte da 400€, un sito completo da&nbsp;800€. Il preventivo è concordato prima di iniziare. Paghi metà alla firma, metà alla consegna.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Quanto tempo ci vuole?</h4>
+                        <h4 data-i18n="faq_2q">Quanto tempo ci vuole?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>3-5 giorni per il pacchetto Base, 5-7 per il Pro. Ti teniamo aggiornato durante tutto il processo.</p>
+                        <p data-i18n="faq_2a">3-5 giorni per il pacchetto Base, 5-7 per il Pro. Ti teniamo aggiornato durante tutto il processo.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>E se non mi piace il risultato?</h4>
+                        <h4 data-i18n="faq_3q">E se non mi piace il risultato?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Garanzia 30 giorni soddisfatti o rimborsati, senza domande.</p>
+                        <p data-i18n="faq_3a">Garanzia 30 giorni soddisfatti o rimborsati, senza domande.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Posso fare modifiche dopo la consegna?</h4>
+                        <h4 data-i18n="faq_4q">Posso fare modifiche dopo la consegna?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Sì, le modifiche sono incluse nella manutenzione mensile.</p>
+                        <p data-i18n="faq_4a">Sì, le modifiche sono incluse nella manutenzione mensile.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Ho già un sito, potete rifarlo?</h4>
+                        <h4 data-i18n="faq_5q">Ho già un sito, potete rifarlo?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Certo. Analizziamo quello che hai e proponiamo un restyling completo, inclusa l'integrazione AI.</p>
+                        <p data-i18n="faq_5a">Certo. Analizziamo quello che hai e proponiamo un restyling completo, inclusa l'integrazione AI.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Devo fornire i testi e le foto?</h4>
+                        <h4 data-i18n="faq_6q">Devo fornire i testi e le foto?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Se li hai è perfetto. Altrimenti ci pensiamo noi: testi, copy e immagini inclusi nel preventivo.</p>
+                        <p data-i18n="faq_6a">Se li hai è perfetto. Altrimenti ci pensiamo noi: testi, copy e immagini inclusi nel preventivo.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Ho davvero bisogno dell'AI per la mia attività?</h4>
+                        <h4 data-i18n="faq_7q">Ho davvero bisogno dell'AI per la mia attività?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Dipende. Se ricevi messaggi fuori orario, perdi clienti ogni giorno: il chatbot&nbsp;AI li recupera. Se i tuoi clienti fanno sempre le stesse domande, l'AI risponde per te. Non la spingiamo a tutti: te la proponiamo solo se ha senso per la tua attività.</p>
+                        <p data-i18n="faq_7a">Dipende. Se ricevi messaggi fuori orario, perdi clienti ogni giorno: il chatbot&nbsp;AI li recupera. Se i tuoi clienti fanno sempre le stesse domande, l'AI risponde per te. Non la spingiamo a tutti: te la proponiamo solo se ha senso per la tua attività.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h4>Come funziona il chatbot in pratica? Risponde bene?</h4>
+                        <h4 data-i18n="faq_8q">Come funziona il chatbot in pratica? Risponde bene?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Il chatbot viene addestrato con le info reali della tua attività: orari, servizi, prezzi, domande frequenti. Non è un bot generico. Risponde come se fossi tu. Puoi vedere la demo live qui sopra.</p>
+                        <p data-i18n="faq_8a">Il chatbot viene addestrato con le info reali della tua attività: orari, servizi, prezzi, domande frequenti. Non è un bot generico. Risponde come se fossi tu. Puoi vedere la demo live qui sopra.</p>
                     </div>
                 </div>
             </div>
@@ -2059,37 +2334,49 @@
                     </defs>
                 </svg>
 
-                <p class="mono" style="position: relative; z-index: 1;">// Parliamoci</p>
-                <h2 class="serif" style="font-size: 3rem; margin-bottom: 1rem; position: relative; z-index: 1;">Hai un'attività. Vuoi crescere online.</h2>
-                <p style="color: var(--text-muted); position: relative; z-index: 1;">Parti da zero o vuoi aggiornare quello che hai? Compila il form. Ti rispondiamo entro&nbsp;24&nbsp;ore con una proposta concreta.</p>
+                <p class="mono" data-i18n="cont_mono" style="position: relative; z-index: 1;">// Parliamoci</p>
+                <h2 class="serif" data-i18n-html="cont_h2" style="font-size: clamp(1.6rem, 5vw, 3rem); margin-bottom: 1rem; position: relative; z-index: 1;">Hai un'attività.<br>Vuoi crescere online.</h2>
+                <p data-i18n="cont_sub" style="color: var(--text-muted); position: relative; z-index: 1;">Parti da zero o vuoi aggiornare quello che hai? Compila il form. Ti rispondiamo entro&nbsp;24&nbsp;ore con una proposta concreta.</p>
 
                 <form class="contact-form" id="satoshi-form" method="POST" action="https://formspree.io/f/mqedwdeo">
-                    <input type="text" name="nome" placeholder="Nome" required>
-                    <input type="tel" name="telefono" placeholder="Telefono" autocomplete="tel">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="nome" data-i18n-ph="cont_nome" placeholder="Nome" required>
+                    <input type="tel" name="telefono" data-i18n-ph="cont_tel" placeholder="Telefono" autocomplete="tel">
+                    <input type="email" name="email" data-i18n-ph="cont_email" placeholder="Email" required>
                     <select name="attivita" required>
                         <option value="" disabled selected>Tipo di attività</option>
-                        <option value="Studio medico / dentistico">Studio medico / dentistico</option>
-                        <option value="Beauty & wellness">Beauty & wellness</option>
-                        <option value="Personal trainer / palestra">Personal trainer / palestra</option>
-                        <option value="Noleggio luxury">Noleggio luxury</option>
-                        <option value="Yacht & charter">Yacht & charter</option>
-                        <option value="Avvocato / studio legale">Avvocato / studio legale</option>
-                        <option value="Ristorante / bar">Ristorante / bar</option>
+                        <option value="Barbieri & Beauty">Barbieri & Beauty</option>
+                        <option value="Ristorante / Bar">Ristorante / Bar</option>
+                        <option value="Hotel & Hospitality">Hotel & Hospitality</option>
+                        <option value="Salute & Benessere">Salute & Benessere</option>
+                        <option value="Locale / Evento">Locale / Evento</option>
+                        <option value="Creator / Artista">Creator / Artista</option>
                         <option value="Altro">Altro</option>
+                    </select>
+                    <select name="cosa_hai_oggi">
+                        <option value="" disabled selected>Cosa hai oggi?</option>
+                        <option value="Niente online">Niente online</option>
+                        <option value="Solo pagina Facebook">Solo pagina Facebook</option>
+                        <option value="Vecchio sito da aggiornare">Vecchio sito da aggiornare</option>
+                        <option value="Sito ok ma voglio aggiungere funzioni">Sito ok ma voglio aggiungere funzioni</option>
+                    </select>
+                    <select name="quando_partire">
+                        <option value="" disabled selected>Quando vuoi partire?</option>
+                        <option value="Subito">Subito</option>
+                        <option value="1–3 mesi">1–3 mesi</option>
+                        <option value="Più avanti, sto valutando">Più avanti, sto valutando</option>
                     </select>
                     <select name="tipo_progetto">
                         <option value="" disabled selected>Tipo di progetto</option>
-                        <option value="Landing page (400–800€)">Landing page (400–800€)</option>
-                        <option value="Sito completo (800–1.200€)">Sito completo (800–1.200€)</option>
-                        <option value="E-commerce (da 1.300€)">E-commerce (da 1.300€)</option>
-                        <option value="Sito con AI integrata">Sito con AI integrata</option>
+                        <option value="Sito vetrina">Sito vetrina</option>
+                        <option value="Sito completo + prenotazioni">Sito completo + prenotazioni</option>
+                        <option value="Sito + AI integrata">Sito + AI integrata</option>
+                        <option value="Automazione / strumento su misura">Automazione / strumento su misura</option>
                         <option value="Non so ancora">Non so ancora</option>
                     </select>
-                    <textarea name="messaggio" class="full-width" placeholder="Descrivi brevemente la tua attività e cosa ti serve" rows="4"></textarea>
-                    <button type="submit" class="btn-pill full-width">Invia richiesta →</button>
-                    <div id="form-feedback" class="full-width">✓ Richiesta inviata correttamente!</div>
-                    <p class="full-width" style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">Preferisci WhatsApp? <a href="https://wa.me/393341989193" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Scrivici direttamente →</a></p>
+                    <textarea name="messaggio" class="full-width" data-i18n-ph="cont_msg" placeholder="Raccontami brevemente la tua attività e cosa vorresti ottenere" rows="4"></textarea>
+                    <button type="submit" class="btn-pill full-width" data-i18n="cont_btn">Inviaci la richiesta →</button>
+                    <div id="form-feedback" class="full-width" data-i18n="cont_feedback">✓ Richiesta inviata correttamente! Ti rispondo entro poche ore.</div>
+                    <p class="full-width" style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;"><span data-i18n="cont_wa_text">Preferisci WhatsApp?</span> <a href="https://wa.me/393341989193" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;" data-i18n="cont_wa_link">Scrivimi direttamente →</a></p>
                 </form>
             </div>
         </section>
@@ -2122,7 +2409,7 @@
         <div class="footer-content">
             <div>
                 <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 Satoshi Web</p>
-                <p style="font-size: 0.72rem; color: var(--text-muted); opacity: 0.5; margin-top: 0.25rem;">Edoardo De Benedictis · P.IVA 18523731000</p>
+                <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem;">Edoardo De Benedictis · P.IVA 18523731000</p>
             </div>
             <div class="footer-links">
                 <a href="https://instagram.com/satoshidev" target="_blank" rel="noopener">Instagram</a>
@@ -2254,7 +2541,7 @@
                 setTimeout(typeLoop, 18);
             }
         }
-        typeLoop();
+        if (typingEl) typeLoop();
 
         // Form Submission via Formspree
         const form = document.getElementById('satoshi-form');
@@ -2339,6 +2626,199 @@
                 if (!wasOpen) item.classList.add('open');
             });
         });
+
+        // ---- i18n ----
+        var translations = {
+            it: {
+                nav_settori:'Settori', nav_progetti:'Progetti', nav_servizi:'Servizi', nav_cta:'Parliamone',
+                nav_mob_label:'// Menu', nav_mob_processo:'Come lavoriamo', nav_mob_faq:'FAQ', nav_mob_cta:'Parliamone →',
+                clients_tagline:'Già scelti da attività locali, federazioni internazionali e realtà istituzionali. Da Civitavecchia e oltre.',
+                hero_h1:'Smetti di essere <i>invisibile online.</i>',
+                hero_sub:'Non solo siti web. Costruiamo il sistema digitale della tua attività: automazioni, AI e strumenti su misura per fare di più, con meno sforzo.',
+                hero_cta:'Prenota una chiamata — 3 minuti →', hero_work:'Vedi i lavori',
+                nicchie_mono:'// Settori', nicchie_h2:'Soluzioni diverse per ogni settore.',
+                nicchie_sub:'Ogni attività ha esigenze diverse. Costruiamo in base a quello che serve davvero, non su un template standard.',
+                nicchie_1_h:'Barbieri & Beauty', nicchie_1_p:'Prenotazioni self-service, zero WhatsApp a tutte le ore',
+                nicchie_2_h:'Ristoranti & Bar', nicchie_2_p:'Menu aggiornabile, prenotazioni tavoli, AI risponde alle FAQ',
+                nicchie_3_h:'Hotel & Hospitality', nicchie_3_p:'Prenotazioni dirette, meno commissioni Booking',
+                nicchie_4_h:'Salute & Benessere', nicchie_4_p:"Prima visita qualificata dall'AI, agenda sempre piena",
+                nicchie_5_h:'Locali & Eventi', nicchie_5_p:'Biglietteria, prenotazioni tavoli, gestione ingressi QR',
+                nicchie_6_h:'Creator & Artisti', nicchie_6_p:'Sito + press kit digitale + link-in-bio per DJ, musicisti, fotografi',
+                proc_mono:'// Come lavoriamo', proc_h2:'Come funziona, passo per passo',
+                proc_1_h:'Ascolto', proc_1_p:"Ci racconti cosa fai e qual è il tuo obiettivo. Capiamo insieme la soluzione giusta per te.",
+                proc_2_h:'Proposta', proc_2_p:'Preventivo dettagliato con costi e tempistiche. Niente sorprese.',
+                proc_3_h:'Sviluppo', proc_3_p:'Lavoriamo e ti teniamo aggiornato. Il risultato è qualcosa di tuo, costruito su misura.',
+                proc_4_h:'Lancio', proc_4_p:'Ultimi test, poi lancio online del tuo sito. Dal primo giorno funziona.',
+                proj_mono:'// Progetti', proj_h2:'Lavori recenti',
+                proj_sub:'Ogni progetto è un problema reale risolto. Guarda cosa abbiamo costruito.',
+                proj_visit:'Visita il sito', proj_scroll:'Scorri per vedere altri progetti',
+                proj_lazzi_desc:'Sito premium con e-commerce e pagamenti Stripe',
+                proj_ikta_desc:'Federazione internazionale di sport da combattimento. Sito istituzionale multilingua per atleti e affiliati in 30 paesi.',
+                proj_unicauto_desc:"Noleggio supercar e auto sportive premium. Catalogo vetture, prenotazione online e AI Advisor per scegliere l'auto giusta.",
+                proj_antitesi_desc:'Landing page per DJ e producer romano. Biografia, date eventi, set mix in streaming e contatti per booking. Design dark, animazioni fluide, mobile-first.',
+                proj_paradise_desc:'App web per menu digitale e gestione tavoli. Scansioni il QR, scegli il tavolo e vedi il menu spirits in tempo reale. Con un tap puoi chiamare il cameriere direttamente dal telefono.',
+                proj_wine_mono:'INTELLIGENZA ARTIFICIALE + ENOTECA', proj_wine_h:'Riconoscimento Vini AI',
+                proj_wine_desc:"Tool di riconoscimento vini con AI integrata per un'enoteca locale. Il cliente fotografa la bottiglia, l'AI identifica il vino, fornisce scheda tecnica, storia e abbinamenti gastronomici in tempo reale.",
+                proj_wine_link:'Dettagli progetto',
+                serv_mono:'// Servizi', serv_h2:'Cosa possiamo fare per il tuo business',
+                serv_web_h:'Siti Web, Webapp & App', serv_web_p:'Landing page, siti completi, e-commerce e app iOS/Android. Veloci, SEO-ottimizzati, mobile-first.',
+                serv_wa:'Scrivici su WhatsApp', serv_ai_h:'AI & Automazioni',
+                serv_ai_p:'Non solo siti. Costruiamo tutto quello che semplifica il lavoro della tua attività. Chatbot, automazioni, tool su misura: se si può automatizzare, lo facciamo.',
+                serv_ai_ex:'ESEMPI DI COSA POSSIAMO INTEGRARE',
+                chip_chatbot:'Chatbot H24', chip_bookings:'Prenotazioni automatiche', chip_whatsapp:'WhatsApp automatico',
+                chip_email:'Email post-acquisto', chip_leads:'Qualificazione lead', chip_quotes:'Preventivi istantanei',
+                chip_vision:'Riconoscimento immagini', chip_docs:'Analisi documenti AI', chip_gcal:'Google Calendar sync',
+                chip_dash:'Dashboard automatiche', chip_reminders:'Promemoria appuntamenti', chip_custom:'Tool AI su misura',
+                price_mono:'// Prezzi', price_h2:'Scegli il tuo piano.', price_sub:'Pagamento 50% avvio + 50% go-live.',
+                price_badge:'Più scelto', price_plan1:'Vetrina', price_onetm:'/una tantum',
+                price_f1:'Pagine incluse', price_f1s:'sezioni multi-contenuto, copy incluso',
+                price_f2:'Dominio + hosting', price_f2s:'primo anno incluso',
+                price_f3:'SEO locale', price_f3s:'Google Business, schema, sitemap',
+                price_f4:'Sistema di prenotazione', price_f4s:'calendario sincronizzato + notifiche email',
+                price_f5:'Assistente AI', price_f5s:'chat sul sito + WhatsApp, risponde H24',
+                price_f6:'Pannello per modificare il sito da solo', price_f6s:'testi, foto, prezzi — senza toccare il codice',
+                price_no:'Non incluso', price_footer:'Ogni progetto è diverso. Il prezzo finale si definisce insieme.',
+                price_btn1:'Scegli Vetrina', price_btn2:'Scegli Pro', price_btn3:'Scegli Pro+AI',
+                mc_f1_vetrina:'1 pagina multi-sezione', mc_f1_pro:'5 pagine + copy incluso', mc_f1_proai:'5 pagine + blog',
+                mc_f2:'Dominio + hosting (1° anno)', mc_f3:'SEO locale', mc_f4:'Sistema prenotazioni',
+                mc_f5:'Pannello modifiche', mc_f6:'Assistente AI', mc_f6_proai:'Assistente AI (chat + WhatsApp)',
+                faq_mono:'// Domande frequenti', faq_h2:'Hai qualche dubbio?',
+                faq_1q:'Quanto costa davvero?', faq_1a:'Dipende dal progetto: una landing page parte da 400€, un sito completo da 800€. Il preventivo è concordato prima di iniziare. Paghi metà alla firma, metà alla consegna.',
+                faq_2q:'Quanto tempo ci vuole?', faq_2a:'3-5 giorni per il pacchetto Base, 5-7 per il Pro. Ti teniamo aggiornato durante tutto il processo.',
+                faq_3q:'E se non mi piace il risultato?', faq_3a:'Garanzia 30 giorni soddisfatti o rimborsati, senza domande.',
+                faq_4q:'Posso fare modifiche dopo la consegna?', faq_4a:'Sì, le modifiche sono incluse nella manutenzione mensile.',
+                faq_5q:'Ho già un sito, potete rifarlo?', faq_5a:"Certo. Analizziamo quello che hai e proponiamo un restyling completo, inclusa l'integrazione AI.",
+                faq_6q:'Devo fornire i testi e le foto?', faq_6a:'Se li hai è perfetto. Altrimenti ci pensiamo noi: testi, copy e immagini inclusi nel preventivo.',
+                faq_7q:"Ho davvero bisogno dell'AI per la mia attività?", faq_7a:'Dipende. Se ricevi messaggi fuori orario, perdi clienti ogni giorno: il chatbot AI li recupera. Se i tuoi clienti fanno sempre le stesse domande, l\'AI risponde per te. Non la spingiamo a tutti: te la proponiamo solo se ha senso per la tua attività.',
+                faq_8q:'Come funziona il chatbot in pratica? Risponde bene?', faq_8a:'Il chatbot viene addestrato con le info reali della tua attività: orari, servizi, prezzi, domande frequenti. Non è un bot generico. Risponde come se fossi tu. Puoi vedere la demo live qui sopra.',
+                cont_mono:'// Parliamoci', cont_h2:'Hai un\'attività.<br>Vuoi crescere online.',
+                cont_sub:'Parti da zero o vuoi aggiornare quello che hai? Compila il form. Ti rispondiamo entro 24 ore con una proposta concreta.',
+                cont_nome:'Nome', cont_tel:'Telefono', cont_email:'Email',
+                cont_att_ph:'Tipo di attività', cont_att_1:'Barbieri & Beauty', cont_att_2:'Ristorante / Bar',
+                cont_att_3:'Hotel & Hospitality', cont_att_4:'Salute & Benessere', cont_att_5:'Locale / Evento',
+                cont_att_6:'Creator / Artista', cont_att_7:'Altro',
+                cont_oggi_ph:'Cosa hai oggi?', cont_oggi_1:'Niente online', cont_oggi_2:'Solo pagina Facebook',
+                cont_oggi_3:'Vecchio sito da aggiornare', cont_oggi_4:'Sito ok ma voglio aggiungere funzioni',
+                cont_quando_ph:'Quando vuoi partire?', cont_quando_1:'Subito', cont_quando_2:'1–3 mesi', cont_quando_3:'Più avanti, sto valutando',
+                cont_tipo_ph:'Tipo di progetto', cont_tipo_1:'Sito vetrina', cont_tipo_2:'Sito completo + prenotazioni',
+                cont_tipo_3:'Sito + AI integrata', cont_tipo_4:'Automazione / strumento su misura', cont_tipo_5:'Non so ancora',
+                cont_msg:'Raccontami brevemente la tua attività e cosa vorresti ottenere',
+                cont_btn:'Inviaci la richiesta →',
+                cont_feedback:'✓ Richiesta inviata correttamente! Ti rispondo entro poche ore.',
+                cont_wa_text:'Preferisci WhatsApp?', cont_wa_link:'Scrivimi direttamente →',
+            },
+            en: {
+                nav_settori:'Industries', nav_progetti:'Projects', nav_servizi:'Services', nav_cta:"Let's Talk",
+                nav_mob_label:'// Menu', nav_mob_processo:'How we work', nav_mob_faq:'FAQ', nav_mob_cta:"Let's Talk →",
+                clients_tagline:'Already trusted by local businesses, international federations and institutions. From Civitavecchia and beyond.',
+                hero_h1:'Stop being <i>invisible online.</i>',
+                hero_sub:'Not just websites. We build the digital system of your business: automations, AI and custom tools to do more, with less effort.',
+                hero_cta:'Book a call — 3 minutes →', hero_work:'See our work',
+                nicchie_mono:'// Industries', nicchie_h2:'Different solutions for every industry.',
+                nicchie_sub:"Every business has different needs. We build based on what's actually needed, not a standard template.",
+                nicchie_1_h:'Barbers & Beauty', nicchie_1_p:'Self-service bookings, zero WhatsApp at all hours',
+                nicchie_2_h:'Restaurants & Bars', nicchie_2_p:'Updatable menu, table reservations, AI answers FAQs',
+                nicchie_3_h:'Hotel & Hospitality', nicchie_3_p:'Direct bookings, fewer Booking.com commissions',
+                nicchie_4_h:'Health & Wellness', nicchie_4_p:'AI-qualified first visits, always a full schedule',
+                nicchie_5_h:'Venues & Events', nicchie_5_p:'Ticketing, table reservations, QR entry management',
+                nicchie_6_h:'Creators & Artists', nicchie_6_p:'Website + digital press kit + link-in-bio for DJs, musicians, photographers',
+                proc_mono:'// How we work', proc_h2:'How it works, step by step',
+                proc_1_h:'Listening', proc_1_p:'You tell us what you do and what your goal is. We figure out the right solution together.',
+                proc_2_h:'Proposal', proc_2_p:'Detailed quote with costs and timelines. No surprises.',
+                proc_3_h:'Development', proc_3_p:'We build and keep you updated. The result is yours, built to measure.',
+                proc_4_h:'Launch', proc_4_p:'Final tests, then your site goes live. Works from day one.',
+                proj_mono:'// Projects', proj_h2:'Recent Work',
+                proj_sub:"Every project is a real problem solved. See what we've built.",
+                proj_visit:'Visit the site', proj_scroll:'Scroll to see more projects',
+                proj_lazzi_desc:'Premium website with e-commerce and Stripe payments',
+                proj_ikta_desc:'International combat sports federation. Multilingual institutional website for athletes and affiliates in 30 countries.',
+                proj_unicauto_desc:'Supercar and premium sports car rental. Vehicle catalog, online booking and AI Advisor to choose the right car.',
+                proj_antitesi_desc:'Landing page for a Roman DJ and producer. Biography, event dates, streaming mix sets and booking contacts. Dark design, fluid animations, mobile-first.',
+                proj_paradise_desc:'Web app for digital menu and table management. Scan the QR, pick your table and browse the spirits menu in real time. One tap calls the waiter from your phone.',
+                proj_wine_mono:'ARTIFICIAL INTELLIGENCE + WINE SHOP', proj_wine_h:'Wine Recognition AI',
+                proj_wine_desc:'AI-powered wine recognition tool for a local wine shop. The customer photographs the bottle, the AI identifies the wine and provides tasting notes, history and food pairings in real time.',
+                proj_wine_link:'Project details',
+                serv_mono:'// Services', serv_h2:'What we can do for your business',
+                serv_web_h:'Websites, Webapps & Apps', serv_web_p:'Landing pages, full websites, e-commerce and iOS/Android apps. Fast, SEO-optimized, mobile-first.',
+                serv_wa:'Message us on WhatsApp', serv_ai_h:'AI & Automation',
+                serv_ai_p:"Not just websites. We build everything that simplifies the work of your business. Chatbots, automations, custom tools: if it can be automated, we do it.",
+                serv_ai_ex:'EXAMPLES OF WHAT WE CAN INTEGRATE',
+                chip_chatbot:'24/7 Chatbot', chip_bookings:'Automated bookings', chip_whatsapp:'Automated WhatsApp',
+                chip_email:'Post-purchase emails', chip_leads:'Lead qualification', chip_quotes:'Instant quotes',
+                chip_vision:'Image recognition', chip_docs:'AI document analysis', chip_gcal:'Google Calendar sync',
+                chip_dash:'Automated dashboards', chip_reminders:'Appointment reminders', chip_custom:'Custom AI tools',
+                price_mono:'// Pricing', price_h2:'Choose your plan.', price_sub:'Payment 50% upfront + 50% at go-live.',
+                price_badge:'Most popular', price_plan1:'Showcase', price_onetm:'/one-time',
+                price_f1:'Pages included', price_f1s:'multi-content sections, copy included',
+                price_f2:'Domain + hosting', price_f2s:'first year included',
+                price_f3:'Local SEO', price_f3s:'Google Business, schema, sitemap',
+                price_f4:'Booking system', price_f4s:'synced calendar + email notifications',
+                price_f5:'AI Assistant', price_f5s:'site chat + WhatsApp, answers 24/7',
+                price_f6:'Self-edit panel', price_f6s:'texts, photos, prices — no coding needed',
+                price_no:'Not included', price_footer:'Every project is different. The final price is set together.',
+                price_btn1:'Choose Showcase', price_btn2:'Choose Pro', price_btn3:'Choose Pro+AI',
+                mc_f1_vetrina:'1 multi-section page', mc_f1_pro:'5 pages + copy included', mc_f1_proai:'5 pages + blog',
+                mc_f2:'Domain + hosting (1st year)', mc_f3:'Local SEO', mc_f4:'Booking system',
+                mc_f5:'Self-edit panel', mc_f6:'AI Assistant', mc_f6_proai:'AI Assistant (chat + WhatsApp)',
+                faq_mono:'// FAQ', faq_h2:'Any questions?',
+                faq_1q:'How much does it really cost?', faq_1a:'It depends on the project: a landing page starts at €400, a full website from €800. The quote is agreed before we start. You pay half on signing, half on delivery.',
+                faq_2q:'How long does it take?', faq_2a:'3-5 days for the Base package, 5-7 for Pro. We keep you updated throughout the process.',
+                faq_3q:"What if I don't like the result?", faq_3a:'30-day satisfaction guarantee or your money back, no questions asked.',
+                faq_4q:'Can I make changes after delivery?', faq_4a:'Yes, changes are included in the monthly maintenance.',
+                faq_5q:'I already have a site, can you redo it?', faq_5a:'Sure. We analyze what you have and propose a complete redesign, including AI integration.',
+                faq_6q:'Do I need to provide texts and photos?', faq_6a:"If you have them, great. Otherwise we handle it: texts, copy and images included in the quote.",
+                faq_7q:'Do I really need AI for my business?', faq_7a:"It depends. If you receive messages outside business hours, you're losing customers every day: the AI chatbot recovers them. If your customers always ask the same questions, the AI answers for you. We don't push it on everyone: we only propose it if it makes sense for your business.",
+                faq_8q:'How does the chatbot work in practice? Does it answer well?', faq_8a:"The chatbot is trained on real information about your business: hours, services, prices, FAQs. It's not a generic bot. It responds as if it were you. You can see the live demo above.",
+                cont_mono:"// Let's Talk", cont_h2:'You have a business.<br>You want to grow online.',
+                cont_sub:"Starting from scratch or want to update what you have? Fill in the form. We'll reply within 24 hours with a concrete proposal.",
+                cont_nome:'Name', cont_tel:'Phone', cont_email:'Email',
+                cont_att_ph:'Type of business', cont_att_1:'Barbers & Beauty', cont_att_2:'Restaurant / Bar',
+                cont_att_3:'Hotel & Hospitality', cont_att_4:'Health & Wellness', cont_att_5:'Venue / Event',
+                cont_att_6:'Creator / Artist', cont_att_7:'Other',
+                cont_oggi_ph:'What do you have today?', cont_oggi_1:'Nothing online', cont_oggi_2:'Just a Facebook page',
+                cont_oggi_3:'Old website to update', cont_oggi_4:'Working site but want to add features',
+                cont_quando_ph:'When do you want to start?', cont_quando_1:'Right away', cont_quando_2:'1–3 months', cont_quando_3:'Later, still evaluating',
+                cont_tipo_ph:'Type of project', cont_tipo_1:'Showcase website', cont_tipo_2:'Full website + bookings',
+                cont_tipo_3:'Website + AI integration', cont_tipo_4:'Automation / custom tool', cont_tipo_5:'Not sure yet',
+                cont_msg:'Briefly tell me about your business and what you want to achieve',
+                cont_btn:'Send your request →',
+                cont_feedback:'✓ Request sent! I\'ll reply within a few hours.',
+                cont_wa_text:'Prefer WhatsApp?', cont_wa_link:'Message me directly →',
+            }
+        };
+
+        function setLang(lang) {
+            const t = translations[lang];
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.dataset.i18nHtml;
+                if (t[key] !== undefined) el.innerHTML = t[key];
+            });
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.dataset.i18nPh;
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+            [
+                { name:'attivita',     keys:['cont_att_ph','cont_att_1','cont_att_2','cont_att_3','cont_att_4','cont_att_5','cont_att_6','cont_att_7'] },
+                { name:'cosa_hai_oggi',keys:['cont_oggi_ph','cont_oggi_1','cont_oggi_2','cont_oggi_3','cont_oggi_4'] },
+                { name:'quando_partire',keys:['cont_quando_ph','cont_quando_1','cont_quando_2','cont_quando_3'] },
+                { name:'tipo_progetto',keys:['cont_tipo_ph','cont_tipo_1','cont_tipo_2','cont_tipo_3','cont_tipo_4','cont_tipo_5'] },
+            ].forEach(({ name, keys }) => {
+                const sel = document.querySelector('select[name="' + name + '"]');
+                if (!sel) return;
+                sel.querySelectorAll('option').forEach((opt, i) => {
+                    if (keys[i] && t[keys[i]] !== undefined) opt.textContent = t[keys[i]];
+                });
+            });
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+            localStorage.setItem('lang', lang);
+        }
+
+        (function() { setLang(localStorage.getItem('lang') || 'it'); })();
     </script>
 </body>
 </html>

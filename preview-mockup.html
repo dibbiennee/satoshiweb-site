@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confronto Mockup Style</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --card: #111111;
+    --accent: #F5A623;
+    --text: #f0ede6;
+    --muted: #7a7770;
+    --border: rgba(240,237,230,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Satoshi', sans-serif; padding: 60px 40px; }
+  h1 { font-family: 'Clash Display', sans-serif; font-size: 1.5rem; color: var(--muted); margin-bottom: 60px; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.8rem; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+  .col-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; padding: 6px 12px; border-radius: 4px; display: inline-block; }
+  .col-label.before { background: #1a1a1a; color: var(--muted); }
+  .col-label.after { background: var(--accent); color: #000; }
+
+  /* STILE ATTUALE - 3D */
+  .mockup-3d {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    perspective: 1000px;
+    overflow: hidden;
+    position: relative;
+  }
+  .mockup-3d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(245,166,35,0.15), transparent 60%);
+  }
+  .device-3d {
+    transform: perspective(1200px) rotateY(-8deg) rotateX(3deg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: -20px 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(245,166,35,0.1);
+  }
+  .device-bar {
+    background: #1a1a1a;
+    padding: 8px 14px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; }
+  .dot.y { background: #ffbd2e; }
+  .dot.g { background: #27c93f; }
+  .device-screen {
+    background: #111;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .device-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .glow-orb {
+    position: absolute;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(245,166,35,0.3), transparent 70%);
+    border-radius: 50%;
+    bottom: -60px; right: -60px;
+    animation: glowRotate 4s linear infinite;
+  }
+  @keyframes glowRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* STILE NUOVO - FLAT */
+  .mockup-flat {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .flat-browser-bar {
+    background: #161616;
+    padding: 10px 16px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .flat-url {
+    margin-left: 12px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: monospace;
+  }
+  .flat-screen {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+  }
+  .flat-screen img { width: 100%; object-fit: cover; object-position: top; }
+  .flat-caption {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .project-name { font-family: 'Clash Display', sans-serif; font-size: 1.1rem; font-weight: 600; }
+  .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 20px; }
+  .project-stat { text-align: right; }
+  .stat-num { font-family: 'Clash Display', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+  .col-desc { margin-top: 20px; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<h1>Confronto stile mockup — progetti</h1>
+
+<div class="compare">
+
+  <!-- STILE ATTUALE -->
+  <div>
+    <span class="col-label before">Stile attuale — 3D inclinato</span>
+    <div class="mockup-3d">
+      <div class="device-3d">
+        <div class="device-bar">
+          <span class="dot r"></span>
+          <span class="dot y"></span>
+          <span class="dot g"></span>
+        </div>
+        <div class="device-screen">
+          <img src="projects/lazzi/desktop.png" alt="Lazzi" onerror="this.style.background='#222';this.style.display='block'">
+        </div>
+      </div>
+      <div class="glow-orb"></div>
+    </div>
+    <p class="col-desc">Prospettiva 3D, glow arancione, ombra profonda. Effetto "template Themeforest" — lo fa chiunque.</p>
+  </div>
+
+  <!-- STILE NUOVO -->
+  <div>
+    <span class="col-label after">Stile proposto — flat + dati</span>
+    <div class="mockup-flat">
+      <div class="flat-browser-bar">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+        <span class="flat-url">lazzibarbershop.it</span>
+      </div>
+      <div class="flat-screen">
+        <img src="projects/lazzi/desktop.png" alt="Lazzi" onerror="this.parentElement.style.background='#1a1a1a'">
+      </div>
+      <div class="flat-caption">
+        <div>
+          <div class="project-name">Lazzi Barbershop</div>
+          <div class="project-tags">
+            <span class="tag">Sito web</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Prenotazioni</span>
+          </div>
+        </div>
+        <div class="project-stat">
+          <div class="stat-num">+38%</div>
+          <div class="stat-label">prenotazioni</div>
+        </div>
+      </div>
+    </div>
+    <p class="col-desc">Screenshot dritto, URL visibile, nome progetto + tag + dato reale. Più credibile, più professionale.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confronto Colori</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #f0ede6; font-family: 'Satoshi', sans-serif; padding: 48px 40px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+  .col-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px; padding: 6px 14px; border-radius: 4px;
+    display: inline-block; font-family: monospace;
+  }
+
+  /* card mock */
+  .mock {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .mock-nav {
+    padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: #111; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mock-logo { font-family: 'Clash Display', sans-serif; font-size: 1.1rem; font-weight: 600; }
+  .mock-cta {
+    padding: 8px 18px; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 700;
+  }
+  .mock-body { padding: 32px 24px; background: #0d0d0d; }
+  .mock-tag {
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em;
+    font-family: monospace; margin-bottom: 14px; display: block;
+  }
+  .mock-h1 {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 2.2rem; font-weight: 700; line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .mock-sub { font-size: 0.9rem; color: #7a7770; margin-bottom: 24px; line-height: 1.6; }
+  .mock-btn {
+    display: inline-block; padding: 12px 24px; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 700; margin-right: 12px;
+  }
+  .mock-btn-ghost {
+    display: inline-block; padding: 12px 24px; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 600;
+    border: 1px solid rgba(240,237,230,0.2); color: #f0ede6;
+  }
+  .mock-stats {
+    display: flex; gap: 32px; margin-top: 28px;
+    padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-num {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1.6rem; font-weight: 700; line-height: 1;
+    display: block;
+  }
+  .stat-label { font-size: 0.65rem; color: #7a7770; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; display: block; }
+
+  /* card projects */
+  .mock-project {
+    margin-top: 16px; background: #111; border-radius: 10px;
+    padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .proj-name { font-weight: 600; font-size: 0.9rem; }
+  .proj-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #555; margin-top: 4px; }
+  .proj-stat { font-family: 'Clash Display', sans-serif; font-size: 1.3rem; font-weight: 700; }
+
+  /* swatch */
+  .swatch-row { display: flex; gap: 12px; margin-top: 20px; }
+  .swatch { width: 48px; height: 48px; border-radius: 10px; }
+  .swatch-label { font-size: 0.7rem; color: #555; font-family: monospace; margin-top: 6px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="grid">
+
+  <!-- ARANCIONE ATTUALE -->
+  <div>
+    <span class="col-label" style="background:#F5A623;color:#000;">Arancione attuale — #F5A623</span>
+    <div class="mock">
+      <div class="mock-nav">
+        <span class="mock-logo" style="color:#F5A623;">S/ Satoshi Web</span>
+        <span class="mock-cta" style="background:#F5A623;color:#000;">Contattaci →</span>
+      </div>
+      <div class="mock-body">
+        <span class="mock-tag" style="color:#F5A623;">— Agenzia Web</span>
+        <div class="mock-h1">Smetti di essere<br><span style="color:#F5A623;">invisibile online.</span></div>
+        <p class="mock-sub">Non solo siti web. Costruiamo il sistema digitale della tua attività.</p>
+        <span class="mock-btn" style="background:#F5A623;color:#000;">Prenota una chiamata</span>
+        <span class="mock-btn-ghost">Vedi i lavori</span>
+        <div class="mock-stats">
+          <div><span class="stat-num" style="color:#F5A623;">12+</span><span class="stat-label">Progetti</span></div>
+          <div><span class="stat-num" style="color:#F5A623;">€590</span><span class="stat-label">da</span></div>
+          <div><span class="stat-num" style="color:#F5A623;">14gg</span><span class="stat-label">consegna</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mock-project">
+      <div><div class="proj-name">Lazzi Barbershop</div><div class="proj-tag">sito · ecommerce · prenotazioni</div></div>
+      <span class="proj-stat" style="color:#F5A623;">+38%</span>
+    </div>
+    <div class="swatch-row">
+      <div><div class="swatch" style="background:#F5A623;"></div><div class="swatch-label">#F5A623</div></div>
+      <div><div class="swatch" style="background:#0a0a0a;border:1px solid #222;"></div><div class="swatch-label">#0a0a0a</div></div>
+      <div><div class="swatch" style="background:#111111;"></div><div class="swatch-label">#111111</div></div>
+    </div>
+  </div>
+
+  <!-- TERRACOTTA PROPOSTA -->
+  <div>
+    <span class="col-label" style="background:#c8542a;color:#fff;">Terracotta proposta — #c8542a</span>
+    <div class="mock">
+      <div class="mock-nav">
+        <span class="mock-logo" style="color:#e8a13a;">S/ Satoshi Web</span>
+        <span class="mock-cta" style="background:#c8542a;color:#fff;">Contattaci →</span>
+      </div>
+      <div class="mock-body">
+        <span class="mock-tag" style="color:#e8a13a;">— Agenzia Web</span>
+        <div class="mock-h1">Smetti di essere<br><span style="color:#e8a13a;">invisibile online.</span></div>
+        <p class="mock-sub">Non solo siti web. Costruiamo il sistema digitale della tua attività.</p>
+        <span class="mock-btn" style="background:#c8542a;color:#fff;">Prenota una chiamata</span>
+        <span class="mock-btn-ghost">Vedi i lavori</span>
+        <div class="mock-stats">
+          <div><span class="stat-num" style="color:#e8a13a;">12+</span><span class="stat-label">Progetti</span></div>
+          <div><span class="stat-num" style="color:#e8a13a;">€590</span><span class="stat-label">da</span></div>
+          <div><span class="stat-num" style="color:#e8a13a;">14gg</span><span class="stat-label">consegna</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mock-project">
+      <div><div class="proj-name">Lazzi Barbershop</div><div class="proj-tag">sito · ecommerce · prenotazioni</div></div>
+      <span class="proj-stat" style="color:#e8a13a;">+38%</span>
+    </div>
+    <div class="swatch-row">
+      <div><div class="swatch" style="background:#c8542a;"></div><div class="swatch-label">#c8542a</div></div>
+      <div><div class="swatch" style="background:#e8a13a;"></div><div class="swatch-label">#e8a13a</div></div>
+      <div><div class="swatch" style="background:#0e0c0a;border:1px solid #222;"></div><div class="swatch-label">#0e0c0a</div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
